@@ -26,7 +26,7 @@ function checkForUploads() {
                     //already in the database skip
                 } else {
                     console.log("the bot found a video:" + item.id);
-                    db.set(item.id, item)
+                    db.set(item.id, item);
 
                     let channel = client.channels.cache.get(client.config.discord_channel_id);
                     let message = client.config.messageTemplate
