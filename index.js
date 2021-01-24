@@ -7,7 +7,7 @@ client.db = require("quick.db");
 client.config = require("./config.js");
 
 client.on("ready", () => {
-    console.log("I'm ready also!");
+    console.log("YouTube rss bot is reading...");
     checkForUploads();
 });
 
