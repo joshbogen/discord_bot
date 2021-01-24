@@ -17,22 +17,25 @@ function checkForUploads() {
         const url = "https://www.youtube.com/feeds/videos.xml?channel_id=" + client.config.channel_id;
 
         parser.parseURL(url, function(err, data) {
-            if (client.db.fetch('postedVideos').includes(data.items[0].link)) return;
-            else {
-                console.log("the bot found a video.");
+            channel_feed = data.items;
 
-                client.db.set('videoData', data.items[0]);
-                client.db.set('postedVideos', data.items[0].link);
-                let channel = client.channels.cache.get(client.config.discord_channel_id);
-                let parsed = client.db.fetch('videoData');
+            if(channel_feed.length < 1 || channel_feed == undefined) return;
 
-                let message = client.config.messageTemplate
-                    .replace(/{author}/g, parsed.author)
-                    .replace(/{title}/g, Discord.Util.escapeMarkdown(parsed.title))
-                    .replace(/{url}/g, parsed.link);
-                channel.send(message);
-            }
+            channel_feed.forEach(function (item, index) {
+                if client.db.has(item.id) {
+                    //already in the database skip
+                } else {
+                    console.log("the bot found a video:" + item.id);
+                    db.set(item.id, item)
 
+                    let channel = client.channels.cache.get(client.config.discord_channel_id);
+                    let message = client.config.messageTemplate
+                        .replace(/{author}/g, item.author)
+                        .replace(/{title}/g, Discord.Util.escapeMarkdown(item.title))
+                        .replace(/{url}/g, item.link);
+                    channel.send(message);
+                }
+            });
         })
     }, client.config.watchInterval);
 }
