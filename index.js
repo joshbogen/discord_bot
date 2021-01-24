@@ -19,27 +19,25 @@ function checkForUploads() {
         parser.parseURL(url, function(err, data) {
             channel_feed = data.items;
 
-            if(channel_feed.length < 1 || channel_feed == undefined) return;
+            if(channel_feed.length < 1 || channel_feed == undefined) {
+                console.log('empty or missing feed.')
+            } else {
+                channel_feed.forEach(function(item) {
+                    if (!client.db.has(item.id)) {
+                        console.log("the bot found a new video:" + item.id);
+                        client.db.set(item.id, item);
 
-            channel_feed.forEach(function (item, index) {
-                if client.db.has(item.id) {
-                    //already in the database skip
-                } else {
-                    console.log("the bot found a video:" + item.id);
-                    db.set(item.id, item);
-
-                    let channel = client.channels.cache.get(client.config.discord_channel_id);
-                    let message = client.config.messageTemplate
-                        .replace(/{author}/g, item.author)
-                        .replace(/{title}/g, Discord.Util.escapeMarkdown(item.title))
-                        .replace(/{url}/g, item.link);
-                    channel.send(message);
-                }
-            });
+                        let channel = client.channels.cache.get(client.config.discord_channel_id);
+                        let message = client.config.messageTemplate
+                            .replace(/{author}/g, item.author)
+                            .replace(/{title}/g, Discord.Util.escapeMarkdown(item.title))
+                            .replace(/{url}/g, item.link);
+                        channel.send(message);
+                    }
+                })
+            }
         })
     }, client.config.watchInterval);
 }
 
 client.login(process.env.BOT_TOKEN);
-
-741657541846630542
