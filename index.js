@@ -23,7 +23,8 @@ function checkForUploads() {
                 console.log('empty or missing feed.')
             } else {
                 channel_feed.forEach(function(item) {
-                    if (!client.db.has(item.id)) {
+                    const recent_post = Date(item.published) <= (new Date() - 300_000)
+                    if (!client.db.has(item.id) && recent_post) {
                         console.log("the bot found a new video:" + item.id);
                         client.db.set(item.id, item);
 
