@@ -440,7 +440,7 @@ client.on('message', message => {
             // if not a key then grab a random from the random response
             var response = randomResponse.get(getRandomInt(randomResponse.size));
         } else {
-            var response = {files: ["https://tenor.com/view/losing-it-cow-gif-18496306"]}
+            var response = {files: ["./resources/cow.gif"]}
         }
        //write the response value to the channel
        if(response) {
