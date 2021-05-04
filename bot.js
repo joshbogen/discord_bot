@@ -27,7 +27,8 @@ hashMap.set('foo', 'Bar!');
 hashMap.set('ping', 'Pong!');
 hashMap.set('test', 'Pass!');
 hashMap.set('sussy', 'Baka? :face_with_monocle:', 'bruh');
-hashMap.set('v', 3);
+hashMap.set('v', 4);
+
 
 // this is the list of random responses
 const randomResponse = new HashMap();
@@ -424,7 +425,6 @@ client.on('message', message => {
         // search the commands for a key that matches
         var response = hashMap.get(cmd);
         const exampleEmbed = new Discord.MessageEmbed().setTitle('Gex Says...').setColor('#66CC33');
-        const notCmdEmbed = new.Discord.MessageEmbed().setTitle('not a command idot').setColor('#66CC33');
 
         if(response) {
             // USE THE HASH RESPONSE
@@ -441,10 +441,13 @@ client.on('message', message => {
         } else if (cmd == 'random') {
             // if not a key then grab a random from the random response
             var response = randomResponse.get(getRandomInt(randomResponse.size));
-        //-} else {
-            //notCmdEmbed.setDescription({files: ["./resources/cow.gif"]})
-            //message.channel.send(notCmdEmbed) 
-       // }
+        } else {
+            message.channel.send('not a command idot', {
+                files: [
+                    "./resources/cow.gif"
+                ]
+            }) 
+        }
        //write the response value to the channel
        if(response) {
            exampleEmbed.setDescription(response)
