@@ -27,7 +27,7 @@ hashMap.set('foo', 'Bar!');
 hashMap.set('ping', 'Pong!');
 hashMap.set('test', 'Pass!');
 hashMap.set('sussy', 'Baka? :face_with_monocle:', 'bruh');
-hashMap.set('v', 5);
+hashMap.set('v', 6);
 
 
 // this is the list of random responses
@@ -442,7 +442,11 @@ client.on('message', message => {
             // if not a key then grab a random from the random response
             var response = randomResponse.get(getRandomInt(randomResponse.size));
         } else if (cmd == 'voicelines') {
-            message.channel.send('fine!', {files: ["./resources/quotes.mp3"]})
+            message.channel.send('fine!', {
+                files: [
+                    "./resources/quotes.mp3"
+                ]
+            })
         } else {
             message.channel.send('not a command idot', {
                 files: [
