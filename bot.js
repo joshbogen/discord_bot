@@ -441,20 +441,17 @@ client.on('message', message => {
             // if not a key then grab a random from the random response
             var response = randomResponse.get(getRandomInt(randomResponse.size));
         } else {
-            var responseForNoCmd = yesthatisrightithinkijustneedsomethinghere
+            message.channel.send('not a command idot', {
+                files: [
+                    "./resources/cow.gif"
+                ]
+            }) 
         }
        //write the response value to the channel
        if(response) {
            exampleEmbed.setDescription(response)
            message.channel.send(exampleEmbed);
-       }
-        if(responseForNoCmd) {
-            message.channel.send('idot', {
-                files: [
-                    "./resources/cow.gif"
-                ]
-            })
-        }
+       }     
     }
 });
 
