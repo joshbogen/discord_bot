@@ -430,7 +430,7 @@ client.on('message', message => {
             // USE THE HASH RESPONSE
         } else if (cmd == 'help') {
             // the keyword help will list the command keys
-            var response = '-quote/quip/random \n -' + hashMap.keys().join('\n -')
+            var response = '-quote/quip/random \n -voicelines \n -' + hashMap.keys().join('\n -')
             exampleEmbed.setTitle('Try one of these...');
         } else if (cmd == 'quote') {
             // if not a key then grab a random from the random response
@@ -441,6 +441,8 @@ client.on('message', message => {
         } else if (cmd == 'random') {
             // if not a key then grab a random from the random response
             var response = randomResponse.get(getRandomInt(randomResponse.size));
+        } else if (cmd == 'voicelines') {
+            message.channel.send({files: ["./resources/quotes.mp3"]})
         } else {
             message.channel.send('not a command idot', {
                 files: [
