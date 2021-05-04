@@ -441,12 +441,6 @@ client.on('message', message => {
         } else if (cmd == 'random') {
             // if not a key then grab a random from the random response
             var response = randomResponse.get(getRandomInt(randomResponse.size));
-        } else if (cmd == 'voicelines') {
-            message.channel.send('fine!', {
-                files: [
-                    "./resources/quotes.mp3"
-                ]
-            })
         } else {
             message.channel.send('not a command idot', {
                 files: [
