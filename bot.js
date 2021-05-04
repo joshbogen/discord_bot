@@ -25,6 +25,7 @@ hashMap.set('rex', "Rex is Gex's prehistoric ancestor. He is a small red dinosau
 hashMap.set('xtra', "She is a secret agent, head of the TV Terrorist Defense Unit, and Gex's love interest/partner. She plays a bigger role in Deep Cover Gecko where she is kidnapped by Rez to get to Gex. Throughout the game, Gex constantly flirts with her and she repeatedly turns him down. After Gex rescues her from Rez, she accepts his love.");
 hashMap.set('foo', 'Bar!');
 hashMap.set('ping', 'Pong!');
+hashMap.set('pong', 'Ping!');
 hashMap.set('test', 'Pass!');
 hashMap.set('sussy', 'Baka? :face_with_monocle:', 'bruh');
 hashMap.set('v', 6);
