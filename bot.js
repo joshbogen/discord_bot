@@ -441,10 +441,10 @@ client.on('message', message => {
         } else if (cmd == 'random') {
             // if not a key then grab a random from the random response
             var response = randomResponse.get(getRandomInt(randomResponse.size));
-        } else {
-            notCmdEmbed.setDescription({files: ["./resources/cow.gif"]})
-            message.channel.send(notCmdEmbed) 
-        }
+        //-} else {
+            //notCmdEmbed.setDescription({files: ["./resources/cow.gif"]})
+            //message.channel.send(notCmdEmbed) 
+       // }
        //write the response value to the channel
        if(response) {
            exampleEmbed.setDescription(response)
