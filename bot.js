@@ -441,7 +441,7 @@ client.on('message', message => {
             // if not a key then grab a random from the random response
             var response = randomResponse.get(getRandomInt(randomResponse.size));
         } else {
-            var responseForNoCmd
+            var responseForNoCmd = yesthatisrightithinkijustneedsomethinghere
         }
        //write the response value to the channel
        if(response) {
