@@ -26,7 +26,7 @@ hashMap.set('xtra', "She is a secret agent, head of the TV Terrorist Defense Uni
 hashMap.set('foo', 'Bar!');
 hashMap.set('ping', 'Pong!');
 hashMap.set('test', 'Pass!');
-hashMap.set('sussy', 'Baka? :face_with_monocle:');
+hashMap.set('sussy', 'Baka? :face_with_monocle:', 'bruh');
 
 
 
