@@ -27,7 +27,7 @@ hashMap.set('foo', 'Bar!');
 hashMap.set('ping', 'Pong!');
 hashMap.set('test', 'Pass!');
 hashMap.set('sussy', 'Baka? :face_with_monocle:', 'bruh');
-hashMap.set('v', 2);
+hashMap.set('v', 3);
 
 // this is the list of random responses
 const randomResponse = new HashMap();
