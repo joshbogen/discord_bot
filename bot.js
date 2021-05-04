@@ -28,7 +28,6 @@ hashMap.set('ping', 'Pong!');
 hashMap.set('test', 'Pass!');
 hashMap.set('sussy', 'Baka? :face_with_monocle:', 'bruh');
 
-
 // this is the list of random responses
 const randomResponse = new HashMap();
 randomResponse.set(0, "Get your stinking paws off me you damn dirty ape!");
@@ -440,6 +439,8 @@ client.on('message', message => {
         } else if (cmd == 'random') {
             // if not a key then grab a random from the random response
             var response = randomResponse.get(getRandomInt(randomResponse.size));
+        } else {
+            var response = 'https://tenor.com/view/losing-it-cow-gif-18496306'
         }
        //write the response value to the channel
        if(response) {
