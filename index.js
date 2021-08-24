@@ -9,9 +9,13 @@ client.config = require("./config.js");
 client.on("ready", () => {
     console.log("YouTube rss bot is reading...");
     checkForUploads();
-    client.user.setActivity("Testing", {
-        type: "CUSTOM_STATUS"
-    })
+    client.user.setPresence({
+        status: "online",
+        game: {
+            name: "gex help",
+            type: "PLAYING"
+        }
+    });
 });
 
 function checkForUploads() {
