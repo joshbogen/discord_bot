@@ -2,7 +2,6 @@
 const Discord = require('discord.js');
 //var Discord = require('discord.io');
 var HashMap = require('hashmap');
-var PrefixFull = "Gex"
 const client = new Discord.Client();
 
 client.on('ready', () => {
@@ -421,7 +420,7 @@ randomResponse.set(384, "Any of you mugs know where I can get a pair of concrete
 // this is the bot listener
 client.on('message', message => {
     // if the chat message starts with an bang (!)
-    if (message.content.substring(0, 1) = PrefixFull) {
+    if (message.content.substring(0, 1) == '!') {
         // parse the message and get the vbalues between the ! and the space
         var cmd = message.content.substring(1).split(' ')[0];
         // search the commands for a key that matches
