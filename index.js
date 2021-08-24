@@ -9,6 +9,7 @@ client.config = require("./config.js");
 client.on("ready", () => {
     console.log("YouTube rss bot is reading...");
     checkForUploads();
+    client.user.setActivity("I changed the prefix to 'gex'")
 });
 
 function checkForUploads() {
