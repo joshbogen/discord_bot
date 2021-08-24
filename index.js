@@ -9,7 +9,7 @@ client.config = require("./config.js");
 client.on("ready", () => {
     console.log("YouTube rss bot is reading...");
     checkForUploads();
-    client.user.setActivity("New prefix is 'gex'", {
+    client.user.setActivity("Testing", {
         type: "CUSTOM_STATUS"
     })
 });
